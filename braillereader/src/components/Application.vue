@@ -51,14 +51,6 @@ export default {
             isLowerCaseLetter: false,
             isNumber: false,
             translationMap: new Map([
-                /*
-                    Cisla jsou fked up a nefungujou, stejne jako tyhle true statementy
-                */
-                [5, this.isLowerCaseLetter=true],
-                [1258, this.isNumber=true],
-                [2, this.isUpperCaseLetter=true],
-                [58, this.isUpperCaseWord=true],
-
                 [7, 'a'],
                 [47, 'b'],
                 [78, 'c'],
@@ -131,7 +123,7 @@ export default {
                 [4578, 7],
                 [457, 8],
                 [48, 9],
-                [458, 0]
+                [458, 0],
             ])
         }
     },
@@ -219,18 +211,37 @@ export default {
                 var key = this.tempArray.sort((a,b) => {
                     return a-b;
                 }).join("")
-                if(this.isNumber) {
-                    this.letter = this.translationMapNums.get(parseInt(key)).toString()
-                } else {
-                    if(this.isUpperCaseLetter || this.isUpperCaseWord) {
-                        this.letter = this.translationMap.get(parseInt(key)).toString().toUpperCase()
-                    } else {
-                        this.letter = this.translationMap.get(parseInt(key)).toString()
-                    }
-                }
 
-                this.isUpperCaseLetter = false
-                console.log(this.letter)
+                switch(parseInt(key)) {
+                    case 5:
+                        this.isLowerCaseLetter = true
+                        this.isUpperCaseLetter = false
+                        this.isUpperCaseWord = false
+                        break;
+                    case 1258:
+                        this.isNumber = true
+                        break;
+                    case 2:
+                        this.isUpperCaseLetter = true
+                        break;
+                    case 58:
+                        this.isUpperCaseWord = true
+                        break;
+                    default:
+                        if(this.isNumber == true) {
+                            this.letter = this.translationMapNums.get(parseInt(key)) != undefined ? this.translationMapNums.get(parseInt(key)).toString() : '?'
+                        } else {
+                            if(this.isUpperCaseLetter || this.isUpperCaseWord) {
+                                this.letter = this.translationMap.get(parseInt(key)) != undefined ? this.translationMap.get(parseInt(key)).toString().toUpperCase() : '?'
+                            } else {
+                                this.letter = this.translationMap.get(parseInt(key)) != undefined ? this.translationMap.get(parseInt(key)).toString() : '?'
+                            }
+                        }
+                    console.log(this.isUpperCaseLetter)
+                    this.isUpperCaseLetter = false
+                    console.log(this.letter)
+                    }
+                
             } else {
                 console.log('')
             }
