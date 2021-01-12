@@ -1,40 +1,65 @@
 <template>
     <div
     id="app"
-    tabindex="-1"
+    tabindex="0"
+    style="outline: none;"
     @keyup="acceptInput()">
-        <v-container>
+        <v-container
+        fill-height
+        >
             <v-row
-            v-for="n in 3"
-            :key="n"
-            >
-                <v-col
-                xl="2"
-                lg="2"
-                md="2"
-                sm="4"
-                xs="4"
-                v-for="m in 2"
-                :key="m"
-                >
-                    <v-card
-                    class="pa-2 my-2"
-                    outlined
-                    tile
-                    :id="n.toString()+m.toString()"
-                    ref="card"
+            dense
+            justify="center"
+            align="center">
+                <v-col>
+                    <v-container
+                    style="max-width: 700px; max-height: 100%"
                     >
-                        <v-responsive :aspect-ratio="1/1">
-                            <v-card-title
-                            class="text-h1 justify-center mt-12">
-                                .
-                            </v-card-title>
-                        </v-responsive>
-                    </v-card>
+                        <v-row
+                        v-for="n in 3"
+                        :key="n"
+                        >
+                            <v-col
+                            xl="5"
+                            lg="5"
+                            md="5"
+                            sm="5"
+                            xs="5"
+                            v-for="m in 2"
+                            :key="m"
+                            >
+                                <v-card
+                                class="pa-2 my-2"
+                                outlined
+                                tile
+                                :id="n.toString()+m.toString()"
+                                ref="card"
+                                >
+                                    <v-responsive :aspect-ratio="1/1">
+                                        <v-card-title
+                                        class="text-h1 justify-center mt-12">
+                                            .
+                                        </v-card-title>
+                                    </v-responsive>
+                                </v-card>
+                            </v-col>
+                        </v-row>
+                    </v-container>
+                </v-col>
+                <v-col>
+                    <span class="text-h5 my-2 ml-2">
+                        {{this.word}}
+                    </span>
+                    <span v-bind:class="['text-h5 text--disabled flow-left',!this.letter ? flowleft : '']">
+                        {{this.letter}}
+                    </span>
+                    <div class="text-h6 my-2">
+                        {{this.text}}
+                    </div>
                 </v-col>
             </v-row>
         </v-container>
-    </div>    
+    </div>
 </template>
 <script>
 export default {
@@ -125,6 +150,16 @@ export default {
                 [48, 9],
                 [458, 0],
             ])
+        }
+    },
+    created: {
+
+    },
+    computed: {
+        xSliding () {
+            return {
+                
+            }
         }
     },
     methods: {
@@ -251,5 +286,18 @@ export default {
 }
 </script>
 <style scoped>
+    .flowleft {
+        animation: move 0.5s ease-out;
+        animation-delay: 100ms;
+        transform: translateX(100%);
+    }
 
+    @keyframes move {
+        0% {
+            transform: translateX(0px);
+        }
+        100% {
+            transform: translateX(100px);
+        }
+    }
 </style>
