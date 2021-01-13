@@ -22,4 +22,4 @@ This website is a free-time project to help people to translate from Braille to 
 
 Since this project doesn't make any money from ads (because they only worsen the experience (and almost everyone is nowadays using AdBlock anyway)), I would be delighted if you tipped me some NANO in case you used it and liked it.
 
-## My NANO Address: nano_3f4zfaa8nqqk4t5ts571xxwjqr6asx8e7m3onigzwsu6tpqntqhqi9gwmct4
+###### My NANO Address: nano_3f4zfaa8nqqk4t5ts571xxwjqr6asx8e7m3onigzwsu6tpqntqhqi9gwmct4
