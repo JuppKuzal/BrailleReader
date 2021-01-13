@@ -3,10 +3,14 @@
         <div class="text-h5 ma-2 my-4 pa-2">
             How to use
         </div>
+        
         <blockquote class="text-body-1 ma-2 pa-2">
+            <v-alert type="info">
             To input text, use the numbers 1, 2, 4, 5, 7 and 8 on your numerical keyboard, as this grid resembles the braille grid. 
             Each heightened dot represents a number. Finish both letters and words with space. Translated text will appear under the translated word.
+            </v-alert>       
         </blockquote>
+    
         <blockquote class="text-body-1 ma-2 pa-2">
             <img src="@/assets/numGrid.png" class="center">
         </blockquote>
@@ -14,7 +18,7 @@
             Current limitations
         </div>
         <blockquote class="text-body-1 ma-2 pa-2">
-            The translator doesn't work for all languages (because of their individual special symbols). It does however work for all latin letters and Czech special characters, Czech being the 
+            The translator doesn't work for all languages (because of their individual special characters). It does however work for all latin letters and Czech special characters, Czech being the 
             first implemented language (due to being Czech myself).
         </blockquote>
         <div class="text-h5 ma-2 my-4 pa-2">
@@ -39,7 +43,7 @@
         </div>
         <blockquote class="text-body-1 ma-2 pa-2">
             Since this project doesn't make any money from ads (because they only worsen the experience (and almost everyone is nowadays using AdBlock anyway)), I would be delighted if you tipped me 
-            some NANO in case you used it and liked it. 
+            some <a href="https://nano.org/">NANO</a> in case you used it and liked it. 
         </blockquote>
         <blockquote class="text-body-1 ma-2 pa-2">
             My NANO Address: nano_3f4zfaa8nqqk4t5ts571xxwjqr6asx8e7m3onigzwsu6tpqntqhqi9gwmct4
@@ -61,5 +65,10 @@ export default {
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    a {
+        color: #404040;
+        text-decoration: none;
     }
 </style>
