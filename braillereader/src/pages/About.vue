@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :class="{darkmode:darkmode}">
         <Menu />
         <About />
         <Footer />
@@ -18,9 +18,17 @@ export default {
         About,
         Footer
     },
+    data () {
+        return {
+            darkmode:true,
+        }
+    }
 }
 </script>
 
 <style scoped>
-
+    .darkmode {
+        background-color: #181818;
+        color: #B3B3B3;
+    }
 </style>

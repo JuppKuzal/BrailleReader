@@ -1,18 +1,18 @@
 <template>
-    <div>
+    <div :class="{ darkmode: darkmode }">
         <div class="text-h5 ma-2 my-4 pa-2">
             How to use
         </div>
-        
         <blockquote class="text-body-1 ma-2 pa-2">
-            <v-alert type="info">
+            <v-alert type="info" color="grey darken-3">
             To input text, use the numbers 1, 2, 4, 5, 7 and 8 on your numerical keyboard, as this grid resembles the braille grid. 
             Each heightened dot represents a number. Finish both letters and words with space. Translated text will appear under the translated word.
             </v-alert>       
         </blockquote>
     
         <blockquote class="text-body-1 ma-2 pa-2">
-            <img src="@/assets/numGrid.png" class="center">
+            <img v-if="darkmode" src="@/assets/numGridDark.png" class="center">
+            <img v-else src="@/assets/numGridLight.png" class="center">
         </blockquote>
         <div class="text-h5 ma-2 my-4 pa-2">
             Current limitations
@@ -26,7 +26,7 @@
         </div>
         <blockquote class="text-body-1 ma-2 pa-2">
             The project will be updated further in the future, like improving design and controls for mobile, as well as turning it to a Progressive Web App (PWA) and make it downloadable
-            as an app directly to your phone, even offline. Support for multiple languages and dark mode are also coming.
+            as an app directly to your phone, even offline. Support for multiple languages, dark mode and translation from text to Braille are also coming.
             If you had any remarks or suggestions regarding the current state or future development of this app, please let me know via contact listed in the footer.
         </blockquote>
         <div class="text-h5 ma-2 my-4 pa-2">
@@ -49,14 +49,19 @@
             My NANO Address: nano_3f4zfaa8nqqk4t5ts571xxwjqr6asx8e7m3onigzwsu6tpqntqhqi9gwmct4
         </blockquote>
         <blockquote class="text-body-1 ma-2 pa-2 mb-12">
-            <img src="@/assets/braillenanoqr.png" class="center">
+            <img v-if="darkmode" src="@/assets/braillenanoqrDark.png" class="center">
+            <img v-else src="@/assets/braillenanoqrLight.png" class="center">
         </blockquote>
     </div>
 </template>
 
 <script>
 export default {
-    
+    data () {
+        return {
+            darkmode: true,
+        }
+    }
 }
 </script>
 
@@ -70,5 +75,10 @@ export default {
     a {
         color: #404040;
         text-decoration: none;
+    }
+
+    .darkmode {
+        background-color: #181818;
+        color: #B3B3B3;
     }
 </style>
