@@ -1,11 +1,11 @@
 <template>
-    <v-container style="max-height: 100%;" @keypress.space.prevent>
+    <div @keypress.space.prevent>
         <Menu />
         <Application />
         <v-row justify="center">
         <Footer />
         </v-row>
-    </v-container>
+    </div>
 </template>
 <script>
 import Menu from '../components/Menu'

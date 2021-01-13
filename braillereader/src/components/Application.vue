@@ -5,7 +5,7 @@
     style="outline: none;"
     @keyup="acceptInput()">
         <v-container
-        fill-height
+        style="max-height:70%;"
         >
             <v-row
             dense
@@ -20,10 +20,10 @@
                         :key="n"
                         >
                             <v-col
-                            xl="5"
-                            lg="5"
-                            md="5"
-                            sm="5"
+                            xl="4"
+                            lg="4"
+                            md="4"
+                            sm="4"
                             xs="5"
                             v-for="m in 2"
                             :key="m"
@@ -35,7 +35,7 @@
                                 :id="n.toString()+m.toString()"
                                 ref="card"
                                 >
-                                    <v-responsive :aspect-ratio="1/1">
+                                    <v-responsive :aspect-ratio="1/0.7">
                                         <v-card-title
                                         class="text-h1 justify-center mt-12">
                                             .
