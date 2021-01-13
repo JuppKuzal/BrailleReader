@@ -20,11 +20,11 @@
                         :key="n"
                         >
                             <v-col
-                            xl="4"
-                            lg="4"
-                            md="4"
-                            sm="4"
-                            xs="5"
+                            xl="6"
+                            lg="6"
+                            md="6"
+                            sm="6"
+                            xs="6"
                             v-for="m in 2"
                             :key="m"
                             >
@@ -47,13 +47,13 @@
                     </v-container>
                 </v-col>
                 <v-col>
-                    <span class="text-h5 my-2 ml-2">
+                    <span class="text-h5 my-2 ml-12">
                         {{this.word}}
                     </span>
                     <span v-bind:class="['text-h5 text--disabled flow-left',!this.letter ? flowleft : '']">
                         {{this.letter}}
                     </span>
-                    <div class="text-h6 my-2">
+                    <div class="text-h6 my-6 ml-12">
                         {{this.text}}
                     </div>
                 </v-col>

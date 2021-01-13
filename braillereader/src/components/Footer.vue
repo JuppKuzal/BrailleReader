@@ -1,4 +1,5 @@
 <template>
+    <v-row justify="center">
     <v-footer padless width="80%">
         <v-card
         flat
@@ -35,6 +36,7 @@
         </v-layout>
         </v-card>
     </v-footer>
+    </v-row>
 </template>
 
 <script>
