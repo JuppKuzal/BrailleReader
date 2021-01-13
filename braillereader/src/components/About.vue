@@ -44,7 +44,7 @@
         <blockquote class="text-body-1 ma-2 pa-2">
             My NANO Address: nano_3f4zfaa8nqqk4t5ts571xxwjqr6asx8e7m3onigzwsu6tpqntqhqi9gwmct4
         </blockquote>
-        <blockquote class="text-body-1 ma-2 pa-2">
+        <blockquote class="text-body-1 ma-2 pa-2 mb-12">
             <img src="@/assets/braillenanoqr.png" class="center">
         </blockquote>
     </div>
