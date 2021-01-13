@@ -19,8 +19,8 @@
                     </v-icon>
                 </v-btn>
             </v-card-text>
-            <v-card-text class="mt-n6 footer-text">
-                Feel free to contact me about your inquiries regarding this website. All of your messages are read and taken into consideration to improve this website.
+            <v-card-text class="mt-n7 footer-text">
+                Feel free to contact me about your inquiries regarding this website. All of your messages are read and taken into consideration.
             </v-card-text>
             <v-card-text class="my-n7 footer-text">
                 I have planned some further upgrades to the page to add in the future, you can gladly follow the development activity over at this link and drop a comment with your thoughts!
