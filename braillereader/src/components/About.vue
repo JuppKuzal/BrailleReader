@@ -38,7 +38,7 @@
             Donate
         </div>
         <blockquote class="text-body-1 ma-2 pa-2">
-            Since this project doesn't make any money from ads (because they only worsen the experience (and almost everyone is nowadays using AdBlock anyway)), I would be very glad if you tipped me 
+            Since this project doesn't make any money from ads (because they only worsen the experience (and almost everyone is nowadays using AdBlock anyway)), I would be delighted if you tipped me 
             some NANO in case you used it and liked it. 
         </blockquote>
         <blockquote class="text-body-1 ma-2 pa-2">
