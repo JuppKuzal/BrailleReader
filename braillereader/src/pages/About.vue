@@ -1,8 +1,8 @@
 <template>
     <div :class="{darkmode:darkmode}">
-        <Menu :darkmode="darkmode" @clicked="updateDarkMode" />
-        <About :darkmode="darkmode" />
-        <Footer :darkmode="darkmode" />
+        <Menu />
+        <About />
+        <Footer />
     </div>
 </template>
 
@@ -20,20 +20,24 @@ export default {
     },
     data () {
         return {
-            darkmode: false,
+            
         }
     },
-    methods: {
-        updateDarkMode (darkmodeSetting) {
-            this.darkmode = darkmodeSetting
+    computed: {
+        darkmode () {
+            return this.$store.state.darkmode
         }
-    }
+    },
 }
 </script>
 
 <style scoped>
     .darkmode {
         background-color: #181818;
+        color: #B3B3B3;
+    }
+    .darkmodeLight {
+        background-color: #404040;
         color: #B3B3B3;
     }
 </style>

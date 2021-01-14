@@ -62,9 +62,11 @@ export default {
 
         }
     },
-    props: {
-        darkmode: Boolean,
-    }
+    computed: {
+        darkmode () {
+            return this.$store.state.darkmode
+        }
+    },
 }
 </script>
 

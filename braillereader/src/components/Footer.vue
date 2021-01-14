@@ -1,5 +1,5 @@
 <template>
-    <div :class="{ darkmode: darkmode}">
+    <div :class="{ darkmodeLight: darkmode}">
     <v-row justify="center">
     <v-footer padless width="80%">
         <v-card
@@ -7,7 +7,7 @@
         tile
         width="100%"
         class="text-center"
-        :color="darkmode ? '#181818' : 'white'">
+        :color="darkmode ? '#404040' : 'white'">
         <v-layout grow row justify-center wrap align-center flex>
             <v-card-text>
                 <v-btn
@@ -60,9 +60,11 @@ export default {
             ['mdi-gitlab', "https://gitlab.com/JuppKuzal"]
         ],
     }),
-    props: {
-        darkmode: Boolean,
-    }
+    computed: {
+        darkmode () {
+            return this.$store.state.darkmode
+        }
+    },
 }
 </script>
 

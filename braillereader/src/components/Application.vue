@@ -34,11 +34,14 @@
                                 tile
                                 :id="n.toString()+m.toString()"
                                 ref="card"
+                                :color="darkmode ? '#404040' : ''"
                                 >
                                     <v-responsive :aspect-ratio="1/0.7">
                                         <v-card-title
                                         class="text-h1 justify-center mt-12">
+                                            <div :class="darkmode ? 'whiteText' : 'darkText'">
                                             .
+                                            </div>
                                         </v-card-title>
                                     </v-responsive>
                                 </v-card>
@@ -50,7 +53,7 @@
                     <span class="text-h5 my-2 ml-12">
                         {{this.word}}
                     </span>
-                    <span v-bind:class="['text-h5 text--disabled flow-left',!this.letter ? flowleft : '']">
+                    <span v-bind:class="['text-h5 flow-left', darkmode? 'whiteTextDisabled' : 'text--disabled']">
                         {{this.letter}}
                     </span>
                     <div class="text-h6 my-6 ml-12">
@@ -152,14 +155,9 @@ export default {
             ])
         }
     },
-    created: {
-
-    },
     computed: {
-        xSliding () {
-            return {
-                
-            }
+        darkmode () {
+            return this.$store.state.darkmode
         }
     },
     methods: {
@@ -205,22 +203,13 @@ export default {
 
                         this.isNumber = false
                         this.isUpperCaseWord = false
-
-                        console.log(this.text)
                     } else {
                         //close letter
                         this.word+=this.letter
                         this.letter = ''
                         this.tempArray = []
-
-                        console.log(this.word)
                     }
-                    document.getElementById('11').style.backgroundColor='rgb(255, 255, 255)'
-                    document.getElementById('12').style.backgroundColor='rgb(255, 255, 255)'
-                    document.getElementById('21').style.backgroundColor='rgb(255, 255, 255)'
-                    document.getElementById('22').style.backgroundColor='rgb(255, 255, 255)'
-                    document.getElementById('31').style.backgroundColor='rgb(255, 255, 255)'
-                    document.getElementById('32').style.backgroundColor='rgb(255, 255, 255)'
+                    this.resetCardColors();
                     break;
                 default:
                     console.log('Please press an appropriate key')
@@ -235,10 +224,18 @@ export default {
             }
         },
         changeCardColor(card) {
-            if(card.style.backgroundColor!='rgb(92, 184, 92)'){
-                card.style.backgroundColor='rgb(92, 184, 92)'
+            if(this.darkmode) {
+                if(card.style.backgroundColor!='rgb(92, 184, 92)'){
+                    card.style.backgroundColor='rgb(92, 184, 92)'
+                } else {
+                    card.style.backgroundColor='rgb(64,64,64)'
+                }
             } else {
-                card.style.backgroundColor='rgb(255, 255, 255)'
+                if(card.style.backgroundColor!='rgb(92, 184, 92)'){
+                    card.style.backgroundColor='rgb(92, 184, 92)'
+                } else {
+                    card.style.backgroundColor='rgb(255, 255, 255)'
+                }
             }
         },
         translate () {
@@ -281,6 +278,24 @@ export default {
                 console.log('')
             }
             
+        },
+        resetCardColors () {
+
+            if(this.darkmode) {
+                    document.getElementById('11').style.backgroundColor='rgb(64,64,64)'
+                    document.getElementById('12').style.backgroundColor='rgb(64,64,64)'
+                    document.getElementById('21').style.backgroundColor='rgb(64,64,64)'
+                    document.getElementById('22').style.backgroundColor='rgb(64,64,64)'
+                    document.getElementById('31').style.backgroundColor='rgb(64,64,64)'
+                    document.getElementById('32').style.backgroundColor='rgb(64,64,64)'
+            } else {
+                    document.getElementById('11').style.backgroundColor='rgb(255, 255, 255)'
+                    document.getElementById('12').style.backgroundColor='rgb(255, 255, 255)'
+                    document.getElementById('21').style.backgroundColor='rgb(255, 255, 255)'
+                    document.getElementById('22').style.backgroundColor='rgb(255, 255, 255)'
+                    document.getElementById('31').style.backgroundColor='rgb(255, 255, 255)'
+                    document.getElementById('32').style.backgroundColor='rgb(255, 255, 255)'
+            }
         }
     },
 }
@@ -290,6 +305,15 @@ export default {
         animation: move 0.5s ease-out;
         animation-delay: 100ms;
         transform: translateX(100%);
+    }
+    .whiteText {
+        color: white;
+    }
+    .whiteTextDisabled {
+        color: #525252;
+    }
+    .darkText {
+        color: black;
     }
 
     @keyframes move {

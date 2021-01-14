@@ -3,15 +3,15 @@
         elevation="2"
         width="100%"
         class="pa-4"
-        :class="{darkmode: darkmode}"
+        :class="{darkmodeLight: darkmode}"
         >
         <v-layout justify-space-between>
-            <a href="/">
+            <a href="/#/">
                 <img v-if="darkmode" src="@/assets/iconDark.png" width="48px" height="100%" class="ml-16" title="BrailleReader">
                 <img v-else src="@/assets/icon.svg" width="48px" height="100%" class="ml-16" title="BrailleReader">
             </a>
             <v-card-title class="my-n3 text-sm-h4 text-xl-h2">
-                <a href="/">
+                <a href="/#/">
                     <div :class="darkmode ? 'whitetitle' : 'darktitle'">
                         Braille Reader
                     </div>
@@ -34,7 +34,7 @@
                 rounded
                 height="54px"
                 @click="toggleDarkMode"
-                :title="darkmode ? 'Lights up!' : 'Lights out!'">
+                :title="darkmode ? 'Lights on!' : 'Lights out!'">
                     <v-icon v-if="darkmode" style="color: white;">
                         mdi-white-balance-sunny
                     </v-icon>
@@ -50,16 +50,18 @@
 export default {
     data () {
         return {
-            darkmode: false,
+
         }
     },
-    props: {
-
+    computed: {
+        darkmode () {
+            return this.$store.state.darkmode
+        }
     },
     methods: {
         toggleDarkMode () {
-            this.darkmode = !this.darkmode
-            this.$emit('clicked', this.darkmode)
+            this.$store.commit('switchMode')
+            console.log(this.$store.state.darkmode)
         }
     }
 }
@@ -74,6 +76,10 @@ export default {
     }
     .darkmode {
         background-color: #181818;
+        color: #B3B3B3;
+    }
+    .darkmodeLight {
+        background-color: #404040;
         color: #B3B3B3;
     }
 </style>
