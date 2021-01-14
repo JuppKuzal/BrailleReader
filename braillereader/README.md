@@ -17,9 +17,9 @@ The project will be updated further in the future, like improving design and con
 ##### Roadmap
 
 - [x] Dark Mode
-- [] Support for multiple languages
-- [] Improved design and controls for mobile
-- [] Transformation into a PWA
+- [ ] Support for multiple languages
+- [ ] Improved design and controls for mobile
+- [ ] Transformation into a PWA
 
 
 ### Inspiration
