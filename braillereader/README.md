@@ -16,10 +16,10 @@ The project will be updated further in the future, like improving design and con
 
 ##### Roadmap
 
-:white_check_mark: Dark Mode
-[] Support for multiple languages
-[] Improved design and controls for mobile
-[] Transformation into a PWA
+- [x] Dark Mode
+- [] Support for multiple languages
+- [] Improved design and controls for mobile
+- [] Transformation into a PWA
 
 
 ### Inspiration
