@@ -1,8 +1,8 @@
 <template>
     <div :class="{darkmode:darkmode}">
-        <Menu />
-        <About />
-        <Footer />
+        <Menu :darkmode="darkmode" @clicked="updateDarkMode" />
+        <About :darkmode="darkmode" />
+        <Footer :darkmode="darkmode" />
     </div>
 </template>
 
@@ -20,7 +20,12 @@ export default {
     },
     data () {
         return {
-            darkmode:true,
+            darkmode: false,
+        }
+    },
+    methods: {
+        updateDarkMode (darkmodeSetting) {
+            this.darkmode = darkmodeSetting
         }
     }
 }

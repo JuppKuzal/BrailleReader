@@ -18,7 +18,7 @@
                 </a>
             </v-card-title>
                 <v-btn 
-                class="mr-16" 
+                class="mx-4" 
                 text
                 href="/#/about"
                 height="54px"
@@ -28,6 +28,20 @@
                         About
                     </div>
                 </v-btn>
+                <v-btn
+                class="mx-4"
+                icon
+                rounded
+                height="54px"
+                @click="toggleDarkMode"
+                :title="darkmode ? 'Lights up!' : 'Lights out!'">
+                    <v-icon v-if="darkmode" style="color: white;">
+                        mdi-white-balance-sunny
+                    </v-icon>
+                    <v-icon v-else>
+                        mdi-moon-waning-crescent
+                    </v-icon>
+                </v-btn>
         </v-layout>
         </v-card>
 </template>
@@ -36,7 +50,16 @@
 export default {
     data () {
         return {
-            darkmode: true,
+            darkmode: false,
+        }
+    },
+    props: {
+
+    },
+    methods: {
+        toggleDarkMode () {
+            this.darkmode = !this.darkmode
+            this.$emit('clicked', this.darkmode)
         }
     }
 }

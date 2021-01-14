@@ -4,7 +4,7 @@
             How to use
         </div>
         <blockquote class="text-body-1 ma-2 pa-2">
-            <v-alert type="info" color="grey darken-3">
+            <v-alert type="info" :color="darkmode ? 'grey darken-3' : ''">
             To input text, use the numbers 1, 2, 4, 5, 7 and 8 on your numerical keyboard, as this grid resembles the braille grid. 
             Each heightened dot represents a number. Finish both letters and words with space. Translated text will appear under the translated word.
             </v-alert>       
@@ -59,8 +59,11 @@
 export default {
     data () {
         return {
-            darkmode: true,
+
         }
+    },
+    props: {
+        darkmode: Boolean,
     }
 }
 </script>

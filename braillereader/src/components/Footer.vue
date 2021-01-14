@@ -59,8 +59,10 @@ export default {
             ['mdi-github', "https://github.com/JuppKuzal"],
             ['mdi-gitlab', "https://gitlab.com/JuppKuzal"]
         ],
-        darkmode: true,
-    })
+    }),
+    props: {
+        darkmode: Boolean,
+    }
 }
 </script>
 
