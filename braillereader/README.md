@@ -14,6 +14,14 @@ The translator doesn't work for all languages (because of their individual speci
 
 The project will be updated further in the future, like improving design and controls for mobile, as well as turning it to a Progressive Web App (PWA) and make it downloadable as an app directly to your phone, even offline. Support for multiple languages and dark mode are also coming. If you had any remarks or suggestions regarding the current state or future development of this app, please let me know via contact listed in the footer.
 
+##### Roadmap
+
+:white_check_mark: Dark Mode
+[] Support for multiple languages
+[] Improved design and controls for mobile
+[] Transformation into a PWA
+
+
 ### Inspiration
 
 This website is a free-time project to help people to translate from Braille to standard text. The inspiration came from reading a magazine once, written only in braille. Not understanding it, I created a simple solution in Java. Having moved on to Javascript in the meantime, I decided to recreate it with a simple frontend UI and release it to the public, in case someone faced a similar issue as myself and was not satisfied with other Google results he has found.
