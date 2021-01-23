@@ -12,9 +12,7 @@
             justify="center"
             align="center">
                 <v-col>
-                    <v-container
-                    style="max-width: 700px; max-height: 100%"
-                    >
+                    <v-container>
                         <v-row
                         v-for="n in 3"
                         :key="n"

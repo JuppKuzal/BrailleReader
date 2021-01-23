@@ -11,7 +11,7 @@ const store = new Vuex.Store({
         switchMode (state) {
             state.darkmode = !state.darkmode
         }
-    }
+    },
 })
 
 export default store;

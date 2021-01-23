@@ -5,11 +5,12 @@
         class="pa-4"
         :class="{darkmodeLight: darkmode}"
         >
-        <v-layout justify-space-between>
-            <a href="/#/">
-                <img v-if="darkmode" src="@/assets/iconDark.png" width="48px" height="100%" class="ml-16" title="BrailleReader">
-                <img v-else src="@/assets/icon.svg" width="48px" height="100%" class="ml-16" title="BrailleReader">
+        <v-layout row justify-center justify-space-between>
+            <a href="/#/" v-if="windowWidth>400">
+                <img v-if="darkmode" src="@/assets/iconDark.png" width="48px" height="100%" :class="windowWidth>800 ? 'ml-16' : ''" title="BrailleReader">
+                <img v-else src="@/assets/icon.svg" width="48px" height="100%" title="BrailleReader" :class="windowWidth>800 ? 'ml-16' : ''">
             </a>
+            <v-spacer />
             <v-card-title class="my-n3 text-sm-h4 text-xl-h2">
                 <a href="/#/">
                     <div :class="darkmode ? 'whitetitle' : 'darktitle'">
@@ -17,7 +18,9 @@
                     </div>
                 </a>
             </v-card-title>
-                <v-btn 
+            <v-spacer />
+                <v-btn
+                v-if="windowWidth>800"
                 class="mx-4" 
                 text
                 href="/#/about"
@@ -27,6 +30,18 @@
                     <div :class="darkmode ? 'whitetitle' : 'darktitle'">
                         About
                     </div>
+                </v-btn>
+                <v-btn
+                v-else
+                class="mx-4" 
+                icon
+                href="/#/about"
+                height="54px"
+                title="What is this page?"
+                >
+                    <v-icon :color="darkmode ? 'white' : ''">
+                        mdi-help
+                    </v-icon>
                 </v-btn>
                 <v-btn
                 class="mx-4"
@@ -50,7 +65,8 @@
 export default {
     data () {
         return {
-
+            windowHeight: window.innerHeight,
+            windowWidth: window.innerWidth
         }
     },
     computed: {

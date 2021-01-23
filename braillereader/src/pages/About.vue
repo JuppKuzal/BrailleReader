@@ -3,6 +3,7 @@
         <Menu />
         <About />
         <Footer />
+        <div v-if="darkmode" class="footerExtension"></div>
     </div>
 </template>
 
@@ -39,5 +40,10 @@ export default {
     .darkmodeLight {
         background-color: #404040;
         color: #B3B3B3;
+    }
+    .footerExtension {
+        width: 100%;
+        height: 5vh;
+        background-color: #404040;
     }
 </style>
