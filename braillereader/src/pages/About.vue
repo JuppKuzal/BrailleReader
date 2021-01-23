@@ -1,9 +1,9 @@
 <template>
-    <div :class="{darkmode:darkmode}">
+    <div :class="{darkmode:darkmode, lightmodeLight: !darkmode}">
         <Menu />
         <About />
         <Footer />
-        <div v-if="darkmode" class="footerExtension"></div>
+        <div :class="darkmode ? 'footerExtensionDark' : 'footerExtensionLight'"></div>
     </div>
 </template>
 
@@ -41,9 +41,20 @@ export default {
         background-color: #404040;
         color: #B3B3B3;
     }
-    .footerExtension {
+    .lightmodeGrey {
+        background-color: #B3B3B3;
+    }
+    .lightmodeLight {
+        background-color: #f0e5e5;
+    }
+    .footerExtensionDark {
         width: 100%;
         height: 5vh;
         background-color: #404040;
+    }
+    .footerExtensionLight {
+        width: 100%;
+        height: 5vh;
+        background-color: #B3B3B3;
     }
 </style>

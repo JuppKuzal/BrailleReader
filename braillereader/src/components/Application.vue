@@ -18,8 +18,8 @@
                         :key="n"
                         >
                             <v-col
-                            xl="6"
-                            lg="6"
+                            xl="5"
+                            lg="5"
                             md="6"
                             sm="6"
                             xs="6"
@@ -32,7 +32,7 @@
                                 tile
                                 :id="n.toString()+m.toString()"
                                 ref="card"
-                                :color="darkmode ? '#404040' : ''"
+                                :color="darkmode ? '#404040' : '#B3B3B3'"
                                 >
                                     <v-responsive :aspect-ratio="1/0.7">
                                         <v-card-title
@@ -45,9 +45,17 @@
                                 </v-card>
                             </v-col>
                         </v-row>
+                        <v-card
+                        v-if="windowWidth<phoneWidthBorder"
+                        class="pa-2 my-5"
+                        style="height: 4rem;"
+                        outlined
+                        tile
+                        :color="darkmode ? '#404040' : '#B3B3B3'">
+                        </v-card>
                     </v-container>
                 </v-col>
-                <v-col>
+                <v-col v-if="windowWidth>phoneWidthBorder">
                     <span class="text-h5 my-2 ml-12">
                         {{this.word}}
                     </span>
@@ -59,6 +67,23 @@
                     </div>
                 </v-col>
             </v-row>
+            <v-row class="mb-4" v-if="windowWidth<phoneWidthBorder">
+                <div>
+                    <span class="text-h5 my-2 ml-12">
+                        {{this.word}}
+                    </span>
+                    <span v-bind:class="['text-h5 my-2 ml-2 flow-left', darkmode? 'whiteTextDisabled' : 'text--disabled']">
+                        {{this.letter}}
+                    </span>
+                </div>
+            </v-row>
+            <v-row v-if="windowWidth<phoneWidthBorder">
+                <div>
+                    <div class="text-h6 mx-6 mb-12">
+                        {{this.text}}
+                    </div>
+                </div>
+            </v-row>
         </v-container>
     </div>
 </template>
@@ -68,6 +93,10 @@ export default {
 
     data () {
         return {
+            windowHeight: window.innerHeight,
+            windowWidth: window.innerWidth,
+            phoneWidthBorder: 600,
+
             tempArray: [],
             letter: '',
             word: '',
@@ -232,7 +261,7 @@ export default {
                 if(card.style.backgroundColor!='rgb(92, 184, 92)'){
                     card.style.backgroundColor='rgb(92, 184, 92)'
                 } else {
-                    card.style.backgroundColor='rgb(255, 255, 255)'
+                    card.style.backgroundColor='rgb(179, 179, 179)'
                 }
             }
         },
@@ -287,12 +316,12 @@ export default {
                     document.getElementById('31').style.backgroundColor='rgb(64,64,64)'
                     document.getElementById('32').style.backgroundColor='rgb(64,64,64)'
             } else {
-                    document.getElementById('11').style.backgroundColor='rgb(255, 255, 255)'
-                    document.getElementById('12').style.backgroundColor='rgb(255, 255, 255)'
-                    document.getElementById('21').style.backgroundColor='rgb(255, 255, 255)'
-                    document.getElementById('22').style.backgroundColor='rgb(255, 255, 255)'
-                    document.getElementById('31').style.backgroundColor='rgb(255, 255, 255)'
-                    document.getElementById('32').style.backgroundColor='rgb(255, 255, 255)'
+                    document.getElementById('11').style.backgroundColor='rgb(179, 179, 179)'
+                    document.getElementById('12').style.backgroundColor='rgb(179, 179, 179)'
+                    document.getElementById('21').style.backgroundColor='rgb(179, 179, 179)'
+                    document.getElementById('22').style.backgroundColor='rgb(179, 179, 179)'
+                    document.getElementById('31').style.backgroundColor='rgb(179, 179, 179)'
+                    document.getElementById('32').style.backgroundColor='rgb(179, 179, 179)'
             }
         }
     },

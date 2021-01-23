@@ -1,5 +1,5 @@
 <template>
-    <div :class="{ darkmodeLight: darkmode}">
+    <div :class="{ darkmodeLight: darkmode, lightmodeGrey: !darkmode}">
     <v-row justify="center">
     <v-footer padless width="80%">
         <v-card
@@ -7,7 +7,7 @@
         tile
         width="100%"
         class="text-center"
-        :color="darkmode ? '#404040' : 'white'">
+        :color="darkmode ? '#404040' : '#B3B3B3'">
         <v-layout grow row justify-center wrap align-center flex>
             <v-card-text>
                 <v-btn

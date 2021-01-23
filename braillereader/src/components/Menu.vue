@@ -3,10 +3,10 @@
         elevation="2"
         width="100%"
         class="pa-4"
-        :class="{darkmodeLight: darkmode}"
+        :class="{darkmodeLight: darkmode, lightmodeGrey: !darkmode}"
         >
         <v-layout row justify-center justify-space-between>
-            <a href="/#/" v-if="windowWidth>400">
+            <a href="/#/" v-if="windowWidth>smallPhoneWidthBorder">
                 <img v-if="darkmode" src="@/assets/iconDark.png" width="48px" height="100%" :class="windowWidth>800 ? 'ml-16' : ''" title="BrailleReader">
                 <img v-else src="@/assets/icon.svg" width="48px" height="100%" title="BrailleReader" :class="windowWidth>800 ? 'ml-16' : ''">
             </a>
@@ -20,7 +20,7 @@
             </v-card-title>
             <v-spacer />
                 <v-btn
-                v-if="windowWidth>800"
+                v-if="windowWidth>phoneWidthBorder"
                 class="mx-4" 
                 text
                 href="/#/about"
@@ -66,7 +66,9 @@ export default {
     data () {
         return {
             windowHeight: window.innerHeight,
-            windowWidth: window.innerWidth
+            windowWidth: window.innerWidth,
+            phoneWidthBorder: 600,
+            smallPhoneWidthBorder: 400
         }
     },
     computed: {
@@ -90,12 +92,7 @@ export default {
     .whitetitle {
         color: #FFFFFF;
     }
-    .darkmode {
-        background-color: #181818;
-        color: #B3B3B3;
-    }
-    .darkmodeLight {
-        background-color: #404040;
-        color: #B3B3B3;
+    .lightmodeGrey {
+        background-color: #B3B3B3;
     }
 </style>
