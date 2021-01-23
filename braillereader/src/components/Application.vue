@@ -33,6 +33,7 @@
                                 :id="n.toString()+m.toString()"
                                 ref="card"
                                 :color="darkmode ? '#404040' : '#B3B3B3'"
+                                @click.native="acceptTapInput(n.toString()+m.toString())"
                                 >
                                     <v-responsive :aspect-ratio="1/0.7">
                                         <v-card-title
@@ -51,7 +52,9 @@
                         style="height: 4rem;"
                         outlined
                         tile
-                        :color="darkmode ? '#404040' : '#B3B3B3'">
+                        :color="darkmode ? '#404040' : '#B3B3B3'"
+                        :id="inputKeyId"
+                        @click.native="acceptTapInput(inputKeyId)">
                         </v-card>
                     </v-container>
                 </v-col>
@@ -96,6 +99,8 @@ export default {
             windowHeight: window.innerHeight,
             windowWidth: window.innerWidth,
             phoneWidthBorder: 600,
+
+            inputKeyId: 99,
 
             tempArray: [],
             letter: '',
@@ -238,8 +243,53 @@ export default {
                     }
                     this.resetCardColors();
                     break;
-                default:
-                    console.log('Please press an appropriate key')
+            }
+            this.translate()
+        },
+        acceptTapInput (cardId) {
+            var card = document.getElementById(cardId);
+
+            switch(parseInt(cardId)) {
+                case 11:
+                    this.changeArray(card, 7)
+                    this.changeCardColor(card);
+                    break;
+                case 12:
+                    this.changeArray(card, 8)
+                    this.changeCardColor(card);
+                    break;
+                case 21:
+                    this.changeArray(card, 4)
+                    this.changeCardColor(card);
+                    break;
+                case 22:
+                    this.changeArray(card, 5)
+                    this.changeCardColor(card);
+                    break;
+                case 31:
+                    this.changeArray(card, 1)
+                    this.changeCardColor(card);
+                    break;
+                case 32:
+                    this.changeArray(card, 2)
+                    this.changeCardColor(card);
+                    break;
+                case 99:
+                    if(!this.tempArray.length) {
+                        //close word
+                        this.text+=this.word+' '
+                        this.word = ''
+
+                        this.isNumber = false
+                        this.isUpperCaseWord = false
+                    } else {
+                        //close letter
+                        this.word+=this.letter
+                        this.letter = ''
+                        this.tempArray = []
+                    }
+                    this.resetCardColors();
+                    break;
             }
             this.translate()
         },
@@ -296,15 +346,10 @@ export default {
                                 this.letter = this.translationMap.get(parseInt(key)) != undefined ? this.translationMap.get(parseInt(key)).toString() : '?'
                             }
                         }
-                    console.log(this.isUpperCaseLetter)
                     this.isUpperCaseLetter = false
-                    console.log(this.letter)
                     }
                 
-            } else {
-                console.log('')
-            }
-            
+            }            
         },
         resetCardColors () {
 
@@ -323,8 +368,12 @@ export default {
                     document.getElementById('31').style.backgroundColor='rgb(179, 179, 179)'
                     document.getElementById('32').style.backgroundColor='rgb(179, 179, 179)'
             }
-        }
+        },
+        sendMessage (msg) {
+        alert(msg)
+        },
     },
+    
 }
 </script>
 <style scoped>
