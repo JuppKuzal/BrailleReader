@@ -3,7 +3,8 @@
     id="app"
     tabindex="0"
     style="outline: none;"
-    @keyup="acceptInput()">
+    @keyup="acceptInput()"
+    >
         <v-container
         style="max-height:70%;"
         >
@@ -52,7 +53,7 @@
                         style="height: 4rem;"
                         outlined
                         tile
-                        :class="darkmode ? 'darkmodeLightText' : 'darkmodeDarkText'"
+                        :class="darkmode ? 'darkmodeLightBackground darkmodeLightText' : 'darkmodeDarkText lightmodeDarkBackground'"
                         :id="inputKeyId"
                         @click.native="acceptTapInput(inputKeyId)">
                         </v-card>

@@ -1,5 +1,7 @@
 <template>
-    <div @keypress.space.prevent :class="darkmode ? 'darkmodeDarkBackground darkmodeDarkText' : 'lightmodeLightBackground'">
+    <div @keypress.space.prevent
+        :class="darkmode ? 'darkmodeDarkBackground darkmodeDarkText' : 'lightmodeLightBackground'"
+        >
         <Menu />
         <Application />
         <Footer />
