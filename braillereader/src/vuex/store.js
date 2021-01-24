@@ -10,20 +10,6 @@ const store = new Vuex.Store({
         windowWidth: window.innerWidth,
         phoneWidthBorder: 600,
         smallPhoneWidthBorder: 400,
-
-        colors: {
-            lightModeLighterColor: '#f0e5e5',
-            lightModeDarkerColor: '#B3B3B3',
-
-            darkModeLighterColor: '#404040',
-            darkModeDarkerColor: '#181818',
-
-            disabledTextColor: '#525252',
-            
-            cardGreen: 'rgb(64,64,64)',
-
-
-        }
     },
     mutations: {
         switchMode (state) {
