@@ -1,9 +1,9 @@
 <template>
-    <div @keypress.space.prevent :class="{darkmode:darkmode, lightmodeLight: !darkmode}">
+    <div @keypress.space.prevent :class="darkmode ? 'darkmodeDarkBackground darkmodeDarkText' : 'lightmodeLightBackground'">
         <Menu />
         <Application />
         <Footer />
-        <div :class="darkmode ? 'footerExtensionDark' : 'footerExtensionLight'"></div>
+        <div :class="darkmode ? 'footerExtension darkmodeLightBackground' : 'footerExtension lightmodeDarkBackground'"></div>
     </div>
 </template>
 
@@ -32,29 +32,9 @@ export default {
 }
 </script>
 
-<style scoped>
-    .darkmode {
-        background-color: #181818;
-        color: #B3B3B3;
-    }
-    .darkmodeLight {
-        background-color: #404040;
-        color: #B3B3B3;
-    }
-    .lightmodeGrey {
-        background-color: #B3B3B3;
-    }
-    .lightmodeLight {
-        background-color: #f0e5e5;
-    }
-    .footerExtensionDark {
-        width: 100%;
-        height: 5vh;
-        background-color: #404040;
-    }
-    .footerExtensionLight {
-        width: 100%;
-        height: 5vh;
-        background-color: #B3B3B3;
-    }
+<style lang="scss" scoped>
+    /* Dodelat tyhle color variables u vsech classes (je to jenom tady zatim), pak commit */
+    /* Jinak improvenout code quality a readibility, shits awful */
+
+    @import '../main.scss'
 </style>

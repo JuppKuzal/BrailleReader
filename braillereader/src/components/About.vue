@@ -1,5 +1,5 @@
 <template>
-    <div :class="{ darkmode: darkmode }">
+    <div :class="darkmode? 'darkmodeDarkBackground darkmodeDarkText': ''">
         <div class="text-h5 ma-2 my-4 pa-2">
             How to use
         </div>
@@ -63,9 +63,9 @@
 export default {
     data () {
         return {
-            windowHeight: window.innerHeight,
-            windowWidth: window.innerWidth,
-            phoneWidthBorder: 600,
+            windowWidth: this.$store.state.windowWidth,
+            windowHeight: this.$store.state.windowHeight,
+            phoneWidthBorder: this.$store.state.phoneWidthBorder,
         }
     },
     computed: {
@@ -76,20 +76,6 @@ export default {
 }
 </script>
 
-<style scoped>
-    .center{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    a {
-        color: #404040;
-        text-decoration: none;
-    }
-
-    .darkmode {
-        background-color: #181818;
-        color: #B3B3B3;
-    }
+<style lang="scss" scoped>
+    @import '../main.scss'
 </style>

@@ -1,0 +1,96 @@
+$lightModeLighterColor: #f0e5e5;
+$lightModeDarkerColor: #B3B3B3;
+
+$darkModeLighterColor: #404040;
+$darkModeDarkerColor: #181818;
+
+$whiteText: white;
+$blackText: black;
+
+$lightModeDarkTitle: #212121;
+$whiteTextDisabled: #525252;
+
+//base classes
+.darkmodeDarkBackground {
+    background-color: $darkModeDarkerColor;
+}
+.darkmodeDarkText {
+    color: $lightModeDarkerColor;
+}
+.darkmodeLightText {
+    color: $darkModeLighterColor;
+}
+.darkmodeLightBackground {
+    background-color: $darkModeLighterColor;
+}
+.lightmodeDarkBackground {
+    background-color: $lightModeDarkerColor;
+}
+.lightmodeLightBackground {
+    background-color: $lightModeLighterColor;
+}
+
+//pages
+
+.footerExtension {
+    width: 100%;
+    height: 5vh;
+}
+
+//footer component
+
+.footer-text {
+    font-size: 12px;
+}
+a {
+    color: $darkModeLighterColor;
+    text-decoration: none;
+}
+
+.v-divider {
+    border-color:$lightModeDarkerColor !important;
+    width: 100%; 
+}
+
+//menu component
+
+.darktitle {
+    color: $lightModeDarkTitle;
+}
+
+//application component
+
+.flowleft {
+    animation: move 0.5s ease-out;
+    animation-delay: 100ms;
+    transform: translateX(100%);
+}
+.whiteText {
+    color: $whiteText;
+}
+.whiteTextDisabled {
+    color: $whiteTextDisabled;
+}
+.darkText {
+    color: $blackText;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(100px);
+    }
+}
+.cardgreenBackground { 
+    background-color: #5CB85C;
+}
+
+//about component
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

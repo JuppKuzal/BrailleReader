@@ -3,7 +3,7 @@
         elevation="2"
         width="100%"
         class="pa-4"
-        :class="{darkmodeLight: darkmode, lightmodeGrey: !darkmode}"
+        :class="darkmode? 'darkmodeLightBackground darkmodeDarkText': 'lightmodeDarkBackground'"
         >
         <v-layout row justify-center justify-space-between>
             <a href="/#/" v-if="windowWidth>smallPhoneWidthBorder">
@@ -13,7 +13,7 @@
             <v-spacer />
             <v-card-title class="my-n3 text-sm-h4 text-xl-h2">
                 <a href="/#/">
-                    <div :class="darkmode ? 'whitetitle' : 'darktitle'">
+                    <div :class="darkmode ? 'whiteText' : 'darktitle'">
                         Braille Reader
                     </div>
                 </a>
@@ -27,7 +27,7 @@
                 height="54px"
                 title="What is this page?"
                 >
-                    <div :class="darkmode ? 'whitetitle' : 'darktitle'">
+                    <div :class="darkmode ? 'whiteText' : 'darktitle'">
                         About
                     </div>
                 </v-btn>
@@ -50,7 +50,7 @@
                 height="54px"
                 @click="toggleDarkMode"
                 :title="darkmode ? 'Lights on!' : 'Lights out!'">
-                    <v-icon v-if="darkmode" style="color: white;">
+                    <v-icon v-if="darkmode" class="whiteText">
                         mdi-white-balance-sunny
                     </v-icon>
                     <v-icon v-else>
@@ -65,10 +65,10 @@
 export default {
     data () {
         return {
-            windowHeight: window.innerHeight,
-            windowWidth: window.innerWidth,
-            phoneWidthBorder: 600,
-            smallPhoneWidthBorder: 400
+            windowWidth: this.$store.state.windowWidth,
+            windowHeight: this.$store.state.windowHeight,
+            phoneWidthBorder: this.$store.state.phoneWidthBorder,
+            smallPhoneWidthBorder: this.$store.state.smallPhoneWidthBorder
         }
     },
     computed: {
@@ -79,20 +79,11 @@ export default {
     methods: {
         toggleDarkMode () {
             this.$store.commit('switchMode')
-            console.log(this.$store.state.darkmode)
         }
     }
 }
 </script>
 
-<style>
-    .darktitle {
-        color: #212121;
-    }
-    .whitetitle {
-        color: #FFFFFF;
-    }
-    .lightmodeGrey {
-        background-color: #B3B3B3;
-    }
+<style lang="scss" scoped>
+    @import '../main.scss'
 </style>

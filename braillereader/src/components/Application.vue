@@ -32,7 +32,7 @@
                                 tile
                                 :id="n.toString()+m.toString()"
                                 ref="card"
-                                :color="darkmode ? '#404040' : '#B3B3B3'"
+                                :class="darkmode ? 'darkmodeLightBackground darkmodeLightText' : 'darkmodeDarkText lightmodeDarkBackground'"
                                 @click.native="acceptTapInput(n.toString()+m.toString())"
                                 >
                                     <v-responsive :aspect-ratio="1/0.7">
@@ -52,7 +52,7 @@
                         style="height: 4rem;"
                         outlined
                         tile
-                        :color="darkmode ? '#404040' : '#B3B3B3'"
+                        :class="darkmode ? 'darkmodeLightText' : 'darkmodeDarkText'"
                         :id="inputKeyId"
                         @click.native="acceptTapInput(inputKeyId)">
                         </v-card>
@@ -96,10 +96,9 @@ export default {
 
     data () {
         return {
-            windowHeight: window.innerHeight,
-            windowWidth: window.innerWidth,
-            phoneWidthBorder: 600,
-
+            windowWidth: this.$store.state.windowWidth,
+            windowHeight: this.$store.state.windowHeight,
+            phoneWidthBorder: this.$store.state.phoneWidthBorder,
             inputKeyId: 99,
 
             tempArray: [],
@@ -352,7 +351,6 @@ export default {
             }            
         },
         resetCardColors () {
-
             if(this.darkmode) {
                     document.getElementById('11').style.backgroundColor='rgb(64,64,64)'
                     document.getElementById('12').style.backgroundColor='rgb(64,64,64)'
@@ -369,35 +367,11 @@ export default {
                     document.getElementById('32').style.backgroundColor='rgb(179, 179, 179)'
             }
         },
-        sendMessage (msg) {
-        alert(msg)
-        },
     },
     
 }
 </script>
-<style scoped>
-    .flowleft {
-        animation: move 0.5s ease-out;
-        animation-delay: 100ms;
-        transform: translateX(100%);
-    }
-    .whiteText {
-        color: white;
-    }
-    .whiteTextDisabled {
-        color: #525252;
-    }
-    .darkText {
-        color: black;
-    }
 
-    @keyframes move {
-        0% {
-            transform: translateX(0px);
-        }
-        100% {
-            transform: translateX(100px);
-        }
-    }
+<style lang="scss" scoped>
+    @import '../main.scss'
 </style>
