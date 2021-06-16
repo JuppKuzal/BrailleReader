@@ -7,8 +7,7 @@
         >
         <v-layout row justify-center justify-space-between>
             <a href="/#/" v-if="windowWidth>smallPhoneWidthBorder">
-                <img v-if="darkmode" src="@/assets/iconDark.png" width="48px" height="100%" :class="windowWidth>800 ? 'ml-16' : ''" title="BrailleReader">
-                <img v-else src="@/assets/icon.svg" width="48px" height="100%" title="BrailleReader" :class="windowWidth>800 ? 'ml-16' : ''">
+                <img src="@/assets/icon.svg" width="48px" height="100%" title="BrailleReader" :class="windowWidth>800 ? 'ml-16' : ''">
             </a>
             <v-spacer />
             <v-card-title class="my-n3 text-sm-h4 text-xl-h2">
@@ -21,7 +20,6 @@
             <v-spacer />
                 <v-btn
                 v-if="windowWidth>phoneWidthBorder"
-                class="mx-4" 
                 text
                 href="/#/about"
                 height="54px"
@@ -33,7 +31,6 @@
                 </v-btn>
                 <v-btn
                 v-else
-                class="mx-4" 
                 icon
                 href="/#/about"
                 height="54px"

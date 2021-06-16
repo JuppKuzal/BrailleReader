@@ -10,6 +10,7 @@ const store = new Vuex.Store({
         windowWidth: window.innerWidth,
         phoneWidthBorder: 600,
         smallPhoneWidthBorder: 400,
+        xlWidth: 1904
     },
     mutations: {
         switchMode (state) {

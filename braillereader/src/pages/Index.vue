@@ -5,7 +5,7 @@
         <Menu />
         <Application />
         <Footer />
-        <div :class="darkmode ? 'footerExtension darkmodeLightBackground' : 'footerExtension lightmodeDarkBackground'"></div>
+        <div class="footerExtension" :class="darkmode ? 'darkmodeLightBackground' : 'lightmodeDarkBackground'"></div>
     </div>
 </template>
 

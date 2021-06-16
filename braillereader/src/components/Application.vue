@@ -6,7 +6,7 @@
     @keyup="acceptInput()"
     >
         <v-container
-        style="max-height:70%;"
+        style="max-height:50%;"
         >
             <v-row
             dense
@@ -17,9 +17,10 @@
                         <v-row
                         v-for="n in 3"
                         :key="n"
+                        :class="windowWidth>xlWidth ? 'shiftedcenter' : ''"
                         >
                             <v-col
-                            xl="5"
+                            xl="4"
                             lg="5"
                             md="6"
                             sm="6"
@@ -36,7 +37,7 @@
                                 :class="darkmode ? 'darkmodeLightBackground darkmodeLightText' : 'darkmodeDarkText lightmodeDarkBackground'"
                                 @click.native="acceptTapInput(n.toString()+m.toString())"
                                 >
-                                    <v-responsive :aspect-ratio="1/0.7">
+                                    <v-responsive :aspect-ratio="1/0.5">
                                         <v-card-title
                                         class="text-h1 justify-center mt-12">
                                             <div :class="darkmode ? 'whiteText' : 'darkText'">
@@ -100,6 +101,7 @@ export default {
             windowWidth: this.$store.state.windowWidth,
             windowHeight: this.$store.state.windowHeight,
             phoneWidthBorder: this.$store.state.phoneWidthBorder,
+            xlWidth: this.$store.state.xlWidth,
             inputKeyId: 99,
 
             tempArray: [],
