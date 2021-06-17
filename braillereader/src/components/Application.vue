@@ -2,12 +2,9 @@
     <div
     id="app"
     tabindex="0"
-    style="outline: none;"
     @keyup="acceptInput()"
     >
-        <v-container
-        style="max-height:50%;"
-        >
+        <v-container>
             <v-row
             dense
             justify="center"
@@ -37,7 +34,7 @@
                                 :class="darkmode ? 'darkmodeLightBackground darkmodeLightText' : 'darkmodeDarkText lightmodeDarkBackground'"
                                 @click.native="acceptTapInput(n.toString()+m.toString())"
                                 >
-                                    <v-responsive :aspect-ratio="1/0.5">
+                                    <v-responsive :aspect-ratio="1/1">
                                         <v-card-title
                                         class="text-h1 justify-center mt-12">
                                             <div :class="darkmode ? 'whiteText' : 'darkText'">

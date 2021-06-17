@@ -1,4 +1,5 @@
 <template>
+    <v-container>
     <div :class="darkmode? 'darkmodeDarkBackground darkmodeDarkText': ''">
         <div class="text-h5 ma-2 my-4 pa-2">
             How to use
@@ -57,6 +58,7 @@
             <img v-else src="@/assets/braillenanoqrLight.png" class="center">
         </blockquote>
     </div>
+    </v-container>
 </template>
 
 <script>

@@ -1,9 +1,8 @@
 <template>
-    <div :class="darkmode ? 'darkmodeDarkBackground darkmodeDarkText' : 'lightmodeLightBackground'">
+    <div :class="darkmode ? 'darkmodeDarkBackground darkmodeDarkText' : 'lightmodeLightBackground'" class="example">
         <Menu />
         <About />
         <Footer />
-        <div :class="darkmode ? 'footerExtension darkmodeLightBackground' : 'footerExtension lightmodeDarkBackground'"></div>
     </div>
 </template>
 

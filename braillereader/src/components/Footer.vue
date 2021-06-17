@@ -6,7 +6,7 @@
         flat
         tile
         width="100%"
-        class="text-center"
+        class="text-center py-6"
         :class="darkmode ? 'darkmodeLightBackground darkmodeLightText' : 'darkmodeLightText lightmodeDarkBackground'">
         <v-layout grow row justify-center wrap align-center flex>
             <v-card-text>

@@ -6,22 +6,22 @@
         :class="darkmode? 'darkmodeLightBackground darkmodeDarkText': 'lightmodeDarkBackground'"
         >
         <v-layout row justify-center justify-space-between>
-            <a href="/#/" v-if="windowWidth>smallPhoneWidthBorder">
+            <router-link to="/" v-if="windowWidth>smallPhoneWidthBorder">
                 <img src="@/assets/icon.svg" width="48px" height="100%" title="BrailleReader" :class="windowWidth>800 ? 'ml-16' : ''">
-            </a>
+            </router-link>
             <v-spacer />
             <v-card-title class="my-n3 text-sm-h4 text-xl-h2">
-                <a href="/#/">
+                <router-link to="/">
                     <div :class="darkmode ? 'whiteText' : 'darktitle'">
                         Braille Reader
                     </div>
-                </a>
+                </router-link>
             </v-card-title>
             <v-spacer />
+            <router-link to="/about">
                 <v-btn
                 v-if="windowWidth>phoneWidthBorder"
                 text
-                href="/#/about"
                 height="54px"
                 title="What is this page?"
                 >
@@ -32,7 +32,6 @@
                 <v-btn
                 v-else
                 icon
-                href="/#/about"
                 height="54px"
                 title="What is this page?"
                 >
@@ -40,6 +39,7 @@
                         mdi-help
                     </v-icon>
                 </v-btn>
+            </router-link>
                 <v-btn
                 class="mx-4"
                 icon

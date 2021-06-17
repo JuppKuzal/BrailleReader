@@ -1,21 +1,17 @@
 <template>
-  <div>
     <v-app>
       <router-view />
     </v-app>
-  </div>
 </template>
 
 <script>
 export default {
   name: 'App',
-  components: {
-
-  },
-
 }
 </script>
 
 <style>
-  
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+}
 </style>
