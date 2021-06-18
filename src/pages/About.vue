@@ -18,6 +18,9 @@ export default {
         About,
         Footer
     },
+    title () {
+        return 'About BrailleReader'
+    },
     data () {
         return {
             

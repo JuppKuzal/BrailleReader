@@ -3,8 +3,10 @@ import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
 import store from './vuex/store'
+import titleMixin from './mixins/titleMixin'
 
 Vue.config.productionTip = false
+Vue.mixin(titleMixin)
 
 new Vue({
   el: '#app',

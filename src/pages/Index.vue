@@ -20,6 +20,9 @@ export default {
         Application,
         Footer
     },
+    title () {
+        return 'BrailleReader'
+    },
     data () {
         return {
 
