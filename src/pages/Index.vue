@@ -21,7 +21,7 @@ export default {
         Footer
     },
     title () {
-        return 'BrailleReader'
+        return 'Braille Reader'
     },
     data () {
         return {

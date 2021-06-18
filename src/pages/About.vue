@@ -19,7 +19,7 @@ export default {
         Footer
     },
     title () {
-        return 'About BrailleReader'
+        return 'About Braille Reader'
     },
     data () {
         return {
