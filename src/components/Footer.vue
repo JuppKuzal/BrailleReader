@@ -10,7 +10,7 @@
         width="100%"
         class="text-center py-6"
         :class="darkmode ? 'darkmodeLightBackground darkmodeLightText' : 'darkmodeLightText lightmodeDarkBackground'">
-        <v-layout grow row justify-center wrap align-center flex>
+        <v-layout grow row justify-center wrap align-center flex class="mx-2">
             <v-card-text>
                 <v-btn
                 v-for="[i, link] in icons"
