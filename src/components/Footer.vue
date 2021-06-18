@@ -1,7 +1,9 @@
 <template>
     <div :class="darkmode? 'darkmodeLightBackground darkmodeDarkText': 'lightmodeDarkBackground'">
     <v-row justify="center">
-    <v-footer padless width="80%">
+    <v-spacer>
+    </v-spacer>
+    <v-footer padless width="100%">
         <v-card
         flat
         tile
@@ -47,6 +49,8 @@
         </v-layout>
         </v-card>
     </v-footer>
+    <v-spacer>
+    </v-spacer>
     </v-row>
     </div>
 </template>
