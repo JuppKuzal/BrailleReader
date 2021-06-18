@@ -9,7 +9,10 @@
             To input text, use the numbers 1, 2, 4, 5, 7 and 8 on your numerical keyboard, as this grid resembles the braille grid. <br />
             You can also click or tap the given card in the grid. <br />
             Each heightened dot represents a number. Finish both letters and words with space. Translated text will appear under the translated word.
-            </v-alert>       
+            </v-alert>     
+            <v-alert type="info" dense :color="darkmode ? 'grey darken-4' : 'blue accent-3'">
+            If on mobile: the seventh card resembling the space bar serves the space bar purpose. Tap it to end both letters and words.
+            </v-alert>    
         </blockquote>
     
         <blockquote class="text-body-1 ma-2 pa-2">
