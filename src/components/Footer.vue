@@ -56,12 +56,18 @@
 </template>
 
 <script>
+import {
+    mdiEmail,
+    mdiGithub,
+    mdiGitlab
+} from '@mdi/js'
+
 export default {
     data: () => ({
         icons: [
-            ['mdi-email', "mailto:pepa.kousal@gmail.com"],
-            ['mdi-github', "https://github.com/JuppKuzal"],
-            ['mdi-gitlab', "https://gitlab.com/JuppKuzal"]
+            [mdiEmail, "mailto:pepa.kousal@gmail.com"],
+            [mdiGithub, "https://github.com/JuppKuzal"],
+            [mdiGitlab, "https://gitlab.com/JuppKuzal"]
         ],
     }),
     computed: {

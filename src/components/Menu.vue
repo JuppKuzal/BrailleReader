@@ -36,7 +36,7 @@
                 title="What is this page?"
                 >
                     <v-icon :color="darkmode ? 'white' : ''">
-                        mdi-help
+                        {{ icons.mdiHelp }}
                     </v-icon>
                 </v-btn>
             </router-link>
@@ -48,10 +48,10 @@
                 @click="toggleDarkMode"
                 :title="darkmode ? 'Lights on!' : 'Lights out!'">
                     <v-icon v-if="darkmode" class="whiteText">
-                        mdi-white-balance-sunny
+                        {{ icons.mdiWhiteBalanceSunny }}
                     </v-icon>
                     <v-icon v-else>
-                        mdi-moon-waning-crescent
+                        {{ icons.mdiMoonWaningCrescent }}
                     </v-icon>
                 </v-btn>
         </v-layout>
@@ -59,13 +59,25 @@
 </template>
 
 <script>
+import {
+    mdiHelp,
+    mdiWhiteBalanceSunny,
+    mdiMoonWaningCrescent 
+} from '@mdi/js'
+
 export default {
     data () {
         return {
             windowWidth: this.$store.state.windowWidth,
             windowHeight: this.$store.state.windowHeight,
             phoneWidthBorder: this.$store.state.phoneWidthBorder,
-            smallPhoneWidthBorder: this.$store.state.smallPhoneWidthBorder
+            smallPhoneWidthBorder: this.$store.state.smallPhoneWidthBorder,
+
+            icons: {
+                mdiHelp,
+                mdiWhiteBalanceSunny,
+                mdiMoonWaningCrescent
+            }
         }
     },
     computed: {
