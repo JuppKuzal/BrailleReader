@@ -17,7 +17,7 @@
                 :key="i"
                 class="mx-4"
                 icon
-                :href=link target="_blank"
+                :href=link target="_blank" rel="noreferrer"
                 :class="darkmode ? 'darkmodeDarkText' : ''"
                 >
                     <v-icon size="24px">
