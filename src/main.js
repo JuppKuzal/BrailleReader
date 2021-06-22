@@ -8,9 +8,7 @@ import VueMeta from 'vue-meta'
 
 Vue.config.productionTip = false
 Vue.mixin(titleMixin)
-Vue.use(VueMeta, {
-  keyName: 'metaInfo'
-})
+Vue.use(VueMeta)
 
 new Vue({
   el: '#app',
