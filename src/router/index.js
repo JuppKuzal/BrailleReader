@@ -15,12 +15,30 @@ export default new Router({
         {
             path: '/',
             name: 'index',
-            component: index
+            component: index,
+            meta: {
+                title: 'The homepage of Braille Reader',
+                metaTags: [
+                    {
+                    name: 'description',
+                    content: 'An app to comfortably and quickly translate patterns from Braille to other languages. Come over and use it for free!'
+                    }
+                ]
+            }
         },
         {
             path: '/about',
             name: 'about',
-            component: about
+            component: about,
+            meta: {
+                title: 'The Braille Reader | About',
+                metaTags: [
+                    {
+                    name: 'description',
+                    content: 'An app to comfortably and quickly translate patterns from Braille to other languages. Come over and use it for free! - About'
+                    }
+                ]
+            }
         }
     ]
 })
