@@ -15,13 +15,25 @@ import Footer from '../components/Footer'
 
 export default {
     name: 'index',
+    metaInfo: {
+        title: 'The homepage of Braille Reader',
+        titleTemplate: '%s',
+        htmlAttrs: {
+            lang: 'en-US'
+        },
+        meta: [
+            { charset: 'utf-8' },
+            { name: 'description', content: 'An app to comfortably and quickly translate patterns from Braille to other languages. Come over and use it for free!' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        ]
+    },
     components: {
         Menu,
         Application,
         Footer
     },
     title () {
-        return 'Braille Reader'
+        return 'Braille Reader: The quick interactive translation of the braille notation'
     },
     data () {
         return {
