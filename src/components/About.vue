@@ -48,7 +48,7 @@
         </div>
         <blockquote class="text-body-1 ma-2 pa-2">
             Since this project doesn't show any ads (because they only worsen the experience (and almost everyone is nowadays using AdBlock anyway)), I would be delighted if you tipped me 
-            some <a href="https://nano.org/">NANO</a> in case you used it and liked it. 
+            some <a href="https://nano.org/" rel="noreferrer" :style="darkmode ? 'color:white;':'color:black;'">NANO</a> in case you used it and liked it. 
         </blockquote>
         <blockquote class="text-body-1 ma-2 pa-2">
             My NANO Address:

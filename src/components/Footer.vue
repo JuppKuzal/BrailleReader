@@ -32,7 +32,7 @@
             </v-card-text>
             <v-card-text class="my-n7 footer-text">
                 <div :class=" darkmode ? 'darkmodeDarkText' : ''">
-                    I have planned some further upgrades to the page to add in the future, you can gladly follow the development activity over at this <a href="https://github.com/JuppKuzal/BrailleReader/tree/master/braillereader">link</a> and drop a comment with your thoughts!
+                    I have planned some further upgrades to the page to add in the future, you can gladly follow the development activity over at <a href="https://github.com/JuppKuzal/BrailleReader/tree/master/braillereader" rel="noreferrer" :style="darkmode ? 'color:white;':'color:black;'">this link</a> and drop a comment with your thoughts!
                 </div>
             </v-card-text>
             <v-card-text class="mb-n4 footer-text">
@@ -79,5 +79,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    @import '../main.scss'
+    @import '../main.scss';
 </style>
