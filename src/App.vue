@@ -8,7 +8,7 @@
 export default {
   name: 'App',
   metaInfo: {
-    title: 'The homepage of Braille Reader',
+    title: 'The homepage of The Braille Reader',
     titleTemplate: '%s',
     htmlAttrs: {
       lang: 'en-US'
