@@ -13,6 +13,9 @@ import Footer from '../components/Footer'
 
 export default {
     name: 'about',
+    metaInfo: {
+        title: 'About Page'
+    },
     components: {
         Menu,
         About,
