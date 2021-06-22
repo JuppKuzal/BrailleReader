@@ -13,12 +13,13 @@
         <v-layout grow row justify-center wrap align-center flex class="mx-2">
             <v-card-text>
                 <v-btn
-                v-for="[i, link] in icons"
+                v-for="[i, link, desc] in icons"
                 :key="i"
                 class="mx-4"
                 icon
                 :href=link target="_blank" rel="noreferrer"
                 :class="darkmode ? 'darkmodeDarkText' : ''"
+                :aria-label=desc
                 >
                     <v-icon size="24px">
                         {{i}}
@@ -65,9 +66,9 @@ import {
 export default {
     data: () => ({
         icons: [
-            [mdiEmail, "mailto:pepa.kousal@gmail.com"],
-            [mdiGithub, "https://github.com/JuppKuzal"],
-            [mdiGitlab, "https://gitlab.com/JuppKuzal"]
+            [mdiEmail, "mailto:pepa.kousal@gmail.com", "Contact me via E-mail!"],
+            [mdiGithub, "https://github.com/JuppKuzal", "Look at my other projects on Github!"],
+            [mdiGitlab, "https://gitlab.com/JuppKuzal", "Look at my other projects on Gitlab!"]
         ],
     }),
     computed: {
